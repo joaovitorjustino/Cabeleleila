@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+ 
+    </head>
+
+    <body>
+        <header>
+            <p id="HeaderTitle">Cabeleleila Leila</p>
+        </header>
+        <main class="container">    
+            <a href="#" onclick="Modal.open()" class="button new">-> Novo Agendamento <-</a>
+            <section id="agendamento">
+                <div>
+                    <small>Editar agendamentos só pode ser feitos até 2 dias antes<br>Caso queira editar 2 dias depois entrar em contato via telefone</small><br>
+                </div> 
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Serviço</th>
+                            <th>Valor</th>
+                            <th>Data agendamento</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>   
+        <div class="modal-overlay">
+            <div class="modal">
+                <div id="form">
+                    <h2>Novo Agendamento</h2>
+                    <form action="" onsubmit="Formulario.submit(event)">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" placeholder="Nome"/>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="service" name="service" placeholder="Serviço"/>
+                        </div>    
+                        <div class="input-group">
+                            <input type="number" id="valor" name="valor" placeholder="Valor" step="0.01"/>
+                        </div>    
+                        <div class="input-group">
+                            <input type="date" id="date" name="date" />
+                        </div>    
+                        <div class="input-group">
+                            <input type="time" id="time" name="time" min="09:00" max="19:00"/>
+                        </div>
+                        <div class="input-group actions">
+                            <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                            <button>Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>    
+        <div class="modal-overlay-edit">
+            <div class="modal edit">
+                <div id="form">
+                    <h2>Editar Agendamento</h2>
+                    <form id="EditForm" action="" onsubmit="Formulario.submitUpdate(event)">
+                        <div class="input-group">
+                            <input type="text" id="nameEdit" name="nemeEdit" placeholder="Nome"/>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="serviceEdit" name="serviceEdit" placeholder="Serviço"/>
+                        </div>    
+                        <div class="input-group">
+                            <input type="number" id="valorEdit" name="valorEdit" placeholder="Valor" step="0.01"/>
+                        </div>    
+                        <div class="input-group">
+                            <input type="date" id="dateEdit" name="dateEdit" />
+                        </div>    
+                        <div class="input-group">
+                            <input type="time" id="timeEdit" name="timeEdit" min="08:00" max="18:00"/>
+                            <small class="help" id="aviso">Atendimentos devem ser marcados com 2 dias deantecedência</small>
+                        </div>    
+                        <div class="input-group actions">
+                            <a href="#" onclick="ModalEdit.close()" class="button cancel">Cancelar</a>
+                            <button>Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./script.js"></script>
+</html>
